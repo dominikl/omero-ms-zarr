@@ -76,6 +76,7 @@ public class ZarrDataVerticle implements Verticle {
         server = vertx.createHttpServer(new HttpServerOptions().setPort(8080));
         server.requestHandler(router::accept);
         new RequestHandlerForId(connection).handleFor(router, "/id");
+        new RequestHandlerForN5(connection).handleFor(router, "/n5/:imageid");
         server.listen();  // does not yet handle failure
         future.complete();
     }

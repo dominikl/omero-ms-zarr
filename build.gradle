@@ -6,18 +6,26 @@ plugins {
 
 repositories {
     maven {
-        url = 'http://artifacts.openmicroscopy.org/artifactory/maven'
+        url = 'https://artifacts.openmicroscopy.org/artifactory/maven'
     }
     maven {
-        url = 'http://repo.maven.apache.org/maven2'
+        url = 'https://repo.maven.apache.org/maven2'
+    }
+    maven {
+        url = 'https://saalfeldlab.github.io/maven'
     }
 }
 
 dependencies {
     implementation 'org.openmicroscopy:omero-server:5.5.6'
+    implementation 'ome:formats-bsd:6.2.1'
     implementation 'com.google.guava:guava:27.1-jre'
     implementation 'io.vertx:vertx-core:3.9.0'
     implementation 'io.vertx:vertx-web:3.9.0'
+    implementation 'org.janelia.saalfeldlab:n5:2.1.6'
+    implementation 'org.janelia.saalfeldlab:n5-blosc:1.0.1'
+    implementation 'org.janelia.saalfeldlab:n5-zarr:0.0.2-beta'
+    implementation 'org.json:json:20190722'
 }
 
 group = 'org.openmicroscopy'
